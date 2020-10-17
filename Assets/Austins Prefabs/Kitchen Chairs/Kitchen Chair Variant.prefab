@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2049500217802606659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -9120917483420742992, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c00b82b8f346834a99a55b0fc68c54d, type: 2}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -65.54024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.310511
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7687277180854752150, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f93c849d45e68c94396521dc6a747479, type: 2}
+    - target: {fileID: 919132149155446097, guid: 01efb23fd6a8a4c4789e440e70860c15,
+        type: 3}
+      propertyPath: m_Name
+      value: Kitchen Chair
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01efb23fd6a8a4c4789e440e70860c15, type: 3}
