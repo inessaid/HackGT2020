@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes 1/SimpleChatbotV2.unity
-    guid: b587a00bbfa57a542ab1babadd436038
+  m_Scenes: []
   m_configObjects: {}
