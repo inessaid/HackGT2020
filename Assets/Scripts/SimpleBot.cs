@@ -335,7 +335,12 @@ public class SimpleBot : MonoBehaviour
                         
                         GameObject.Instantiate(spawnItems[0],objectPosition,Quaternion.identity);
                     }
-                    
+                    else if (ObjectType == "bottle")
+                    {
+
+                        GameObject.Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                    }
+
                     rend = myObject.GetComponent<Renderer>();
                     rend.material.color = ObjectColor;
                 }
