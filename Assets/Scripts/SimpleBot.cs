@@ -55,6 +55,10 @@ public class SimpleBot : MonoBehaviour
     [SerializeField]
     private Text targetText;
 
+    public GameObject[] spawnItems;
+
+    public Transform Playerlocation;
+
     //Keep track of whether IBM Watson Assistant should process input or is
     //processing input to create a chat response.
     public enum ProcessingStatus { Process, Processing, Idle, Processed };
@@ -315,6 +319,10 @@ public class SimpleBot : MonoBehaviour
 
                 if (ObjectType != null)
                 {
+                    var playerPosition = FindObjectOfType<OVRPlayerController>().GetComponent<Transform>();
+                    Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z+2f);
+
+
                     if (ObjectType == "cube")
                     {
                         myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -324,11 +332,10 @@ public class SimpleBot : MonoBehaviour
                     }
                     else if (ObjectType == "ball")
                     {
-                        myObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                        myObject.transform.position = new Vector3(0f, 1f, 0f);
-                        rend = myObject.GetComponent<Renderer>();
-                        rend.material.color = Color.red;
+                        
+                        GameObject.Instantiate(spawnItems[0],objectPosition,Quaternion.identity);
                     }
+                    
                     rend = myObject.GetComponent<Renderer>();
                     rend.material.color = ObjectColor;
                 }
