@@ -224,7 +224,8 @@ public class SimpleBot : MonoBehaviour
     protected virtual void OnMessage(DetailedResponse<MessageResponse> response, IBMError error)
     {
         textResponse = response.Result.Output.Generic[0].Text.ToString();
-
+        Debug.Log(textResponse);
+        messageTested = true;
         if (targetInputField != null)
         {
             targetInputField.text = textResponse;
@@ -245,7 +246,7 @@ public class SimpleBot : MonoBehaviour
         {
             string intent = response.Result.Output.Intents[0].Intent;
             Debug.LogError("HERE IS THE INTENT : " + intent);
-
+          
             bool createdObject = false;
 
             GameObject myObject = null;
@@ -254,104 +255,125 @@ public class SimpleBot : MonoBehaviour
             Color ObjectColor = Color.red;
             string currentMat = null;
 
-
-            foreach (RuntimeEntity entity in response.Result.Output.Entities)
+            if(intent == "create")
+            {
+                foreach (RuntimeEntity entity in response.Result.Output.Entities)
                 {
                     Debug.LogError("entityType: " + entity.Entity + " , value: " + entity.Value);
-                // direction = entity.Value;
-                //gameManager.MoveObject(direction);
+                    // direction = entity.Value;
+                    //gameManager.MoveObject(direction);
 
-                if (entity.Entity == "object")
-                {
-                    //gameManager.CreateObject(entity.Value, currentMat, currentScale);
-                    createdObject = true;
-                    currentMat = null;
-                    //currentScale = null;
-                    ObjectType = entity.Value;
+                    if (entity.Entity == "object")
+                    {
+                        //gameManager.CreateObject(entity.Value, currentMat, currentScale);
+                        createdObject = true;
+                        currentMat = null;
+                        //currentScale = null;
+                        ObjectType = entity.Value;
 
-                }
-
-
-                if (entity.Entity == "material")
-                {
-                    currentMat = entity.Value;
-
-                    if (currentMat == "black")
-                    {
-                        ObjectColor = Color.black;
-                    }
-                    else if (currentMat == "blue")
-                    {
-                        ObjectColor = Color.blue;
-                    }
-                    else if (currentMat == "cyan")
-                    {
-                        ObjectColor = Color.cyan;
-                    }
-                    else if (currentMat == "gray")
-                    {
-                        ObjectColor = Color.gray;
-                    }
-                    else if (currentMat == "green")
-                    {
-                        ObjectColor = Color.green;
-                    }
-                    else if (currentMat == "magenta")
-                    {
-                        ObjectColor = Color.magenta;
-                    }
-                    else if (currentMat == "red")
-                    {
-                        ObjectColor = Color.red;
-                    }
-                    else if (currentMat == "white")
-                    {
-                        ObjectColor = Color.white;
-                    }
-                    else if (currentMat == "yellow")
-                    {
-                        ObjectColor = Color.yellow;
                     }
 
 
-                }
-
-
-                if (ObjectType != null)
-                {
-                    var playerPosition = FindObjectOfType<OVRPlayerController>().GetComponent<Transform>();
-                    Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z+2f);
-
-
-                    if (ObjectType == "cube")
+                    if (entity.Entity == "material")
                     {
-                        myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        myObject.transform.position = new Vector3(0f, 1f, 0f);
+                        currentMat = entity.Value;
+
+                        if (currentMat == "black")
+                        {
+                            ObjectColor = Color.black;
+                        }
+                        else if (currentMat == "blue")
+                        {
+                            ObjectColor = Color.blue;
+                        }
+                        else if (currentMat == "cyan")
+                        {
+                            ObjectColor = Color.cyan;
+                        }
+                        else if (currentMat == "gray")
+                        {
+                            ObjectColor = Color.gray;
+                        }
+                        else if (currentMat == "green")
+                        {
+                            ObjectColor = Color.green;
+                        }
+                        else if (currentMat == "magenta")
+                        {
+                            ObjectColor = Color.magenta;
+                        }
+                        else if (currentMat == "red")
+                        {
+                            ObjectColor = Color.red;
+                        }
+                        else if (currentMat == "white")
+                        {
+                            ObjectColor = Color.white;
+                        }
+                        else if (currentMat == "yellow")
+                        {
+                            ObjectColor = Color.yellow;
+                        }
+
+
+                    }
+
+
+                    if (ObjectType != null)
+                    {
+                        var playerPosition = FindObjectOfType<OVRPlayerController>().GetComponent<Transform>();
+                        Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z + 2f);
+
+
+                        if (ObjectType == "cube")
+                        {
+                            myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            myObject.transform.position = new Vector3(0f, 1f, 0f);
+                            rend = myObject.GetComponent<Renderer>();
+                            rend.material.color = Color.red;
+                        }
+                        else if (ObjectType == "ball")
+                        {
+
+                            myObject = Instantiate(spawnItems[0], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "bottle")
+                        {
+
+                            myObject = Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                        }
+
                         rend = myObject.GetComponent<Renderer>();
-                        rend.material.color = Color.red;
-                    }
-                    else if (ObjectType == "ball")
-                    {
-                        
-                        GameObject.Instantiate(spawnItems[0],objectPosition,Quaternion.identity);
-                    }
-                    else if (ObjectType == "bottle")
-                    {
-
-                        GameObject.Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                        rend.material.color = ObjectColor;
                     }
 
-                    rend = myObject.GetComponent<Renderer>();
-                    rend.material.color = ObjectColor;
+                }
+                if (!createdObject)
+                {
+                    //gameManager.PlayError(sorryClip);
                 }
 
             }
+            else if (intent == "destroy")
+            {
+                //gameManager.DestroyAtPointer();
+            }
+            else if (intent == "help")
+            {
+
+            }
+        }
+        else
+        {
+            Debug.Log("Failed to invoke OnMessage();");
+        }
+    
+           
 
         }
 
-        Debug.Log(textResponse);
-        messageTested = true;
-    }
+        
+    
 
     private void OnCreateSession(DetailedResponse<SessionResponse> response, IBMError error)
     {
