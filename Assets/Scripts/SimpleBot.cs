@@ -25,16 +25,31 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Cloud.SDK.Utilities;
 using IBM.Watson.Assistant.V2;
 using IBM.Watson.Assistant.V2.Model;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class SimpleBot : MonoBehaviour
 {
+    [Button(ButtonSizes.Large)]
+    public void SayHello()
+    {
+        Debug.Log("Hello button!");
+    }
+
+    public spawner spawnerDict;
+
+    public Dictionary<string, GameObject[]> spawnDict = null;
+
+    private Dictionary<string, GameObject[]> spawnlist;
+
     [SerializeField]
     private WatsonSettings settings;
 
@@ -79,6 +94,13 @@ public class SimpleBot : MonoBehaviour
 
     private void Start()
     {
+        GameObject scriptObject = GameObject.Find("Script");
+
+        spawner spawner1 = new spawner();
+        spawnDict = spawner1.StringGameObjectDictionary;
+
+       
+
         // Enable TLS 1.2
         //ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
@@ -265,6 +287,7 @@ public class SimpleBot : MonoBehaviour
 
                     if (entity.Entity == "object")
                     {
+                   
                         //gameManager.CreateObject(entity.Value, currentMat, currentScale);
                         createdObject = true;
                         currentMat = null;
@@ -335,12 +358,12 @@ public class SimpleBot : MonoBehaviour
                         else if (ObjectType == "ball")
                         {
 
-                            myObject = Instantiate(spawnItems[0], objectPosition, Quaternion.identity);
+                            myObject = Instantiate(spawnerDict.StringGameObjectDictionary["table"][0], objectPosition, Quaternion.identity);
                         }
                         else if (ObjectType == "bottle")
                         {
 
-                            myObject = Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                            myObject = Instantiate(spawnerDict.StringGameObjectDictionary["table_gray"][1], objectPosition, Quaternion.identity);
                         }
 
                         rend = myObject.GetComponent<Renderer>();
