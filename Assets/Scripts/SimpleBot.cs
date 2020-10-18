@@ -44,8 +44,9 @@ public class SimpleBot : MonoBehaviour
         Debug.Log("Hello button!");
     }
 
-    public spawner spawnerDict;
+  //  public spawner spawnerDict;
 
+    public GameObject[] spawnerDict;
     public Dictionary<string, GameObject[]> spawnDict = null;
 
     private Dictionary<string, GameObject[]> spawnlist;
@@ -94,10 +95,7 @@ public class SimpleBot : MonoBehaviour
 
     private void Start()
     {
-        GameObject scriptObject = GameObject.Find("Script");
-
-        spawner spawner1 = new spawner();
-        spawnDict = spawner1.StringGameObjectDictionary;
+      
 
        
 
@@ -358,12 +356,17 @@ public class SimpleBot : MonoBehaviour
                         else if (ObjectType == "ball")
                         {
 
-                            myObject = Instantiate(spawnerDict.StringGameObjectDictionary["table"][0], objectPosition, Quaternion.identity);
+                            Instantiate(spawnItems[0], objectPosition, Quaternion.identity);
                         }
                         else if (ObjectType == "bottle")
                         {
 
-                            myObject = Instantiate(spawnerDict.StringGameObjectDictionary["table_gray"][1], objectPosition, Quaternion.identity);
+                             Instantiate(spawnItems[1], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "bed")
+                        {
+
+                             Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
                         }
 
                         rend = myObject.GetComponent<Renderer>();
