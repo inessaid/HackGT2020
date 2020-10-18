@@ -45,11 +45,15 @@ public class SimpleBot : MonoBehaviour
         Debug.Log("Hello button!");
     }
 
-    public spawner spawnerDict;
+  //  public spawner spawnerDict;
 
+<<<<<<< HEAD
     private HashSet<string> spawnableItems = new HashSet<string>();
     
 
+=======
+    public GameObject[] spawnerDict;
+>>>>>>> 09073ec298d3f3d5513714c9cb5851cd8a90cc3a
     public Dictionary<string, GameObject[]> spawnDict = null;
 
     private Dictionary<string, GameObject[]> spawnlist;
@@ -98,8 +102,12 @@ public class SimpleBot : MonoBehaviour
 
     private void Start()
     {
+<<<<<<< HEAD
         getFileNames();
         spawner spawner1 = new spawner();
+=======
+      
+>>>>>>> 09073ec298d3f3d5513714c9cb5851cd8a90cc3a
 
         var spawnableItemsList = new string[] { "bed", "table", "ball", "bottle", "carpet" };
         foreach (string item in spawnableItemsList)
@@ -362,12 +370,42 @@ public class SimpleBot : MonoBehaviour
                     {
                         var playerPosition = FindObjectOfType<OVRPlayerController>().GetComponent<Transform>();
                         Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z + 2f);
+<<<<<<< HEAD
                         Debug.Log("I am receiving object type");
                         Debug.Log(ObjectType);
                         spawnObject(ObjectType, objectPosition);
                    
                         //rend = myObject.GetComponent<Renderer>();
                         //rend.material.color = ObjectColor;
+=======
+
+
+                        if (ObjectType == "cube")
+                        {
+                            myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            myObject.transform.position = new Vector3(0f, 1f, 0f);
+                            rend = myObject.GetComponent<Renderer>();
+                            rend.material.color = Color.red;
+                        }
+                        else if (ObjectType == "ball")
+                        {
+
+                            Instantiate(spawnItems[0], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "bottle")
+                        {
+
+                             Instantiate(spawnItems[1], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "bed")
+                        {
+
+                             Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                        }
+
+                        rend = myObject.GetComponent<Renderer>();
+                        rend.material.color = ObjectColor;
+>>>>>>> 09073ec298d3f3d5513714c9cb5851cd8a90cc3a
                     }
 
                 }
