@@ -26,15 +26,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Cloud.SDK.Utilities;
 using IBM.Watson.Assistant.V2;
 using IBM.Watson.Assistant.V2.Model;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class SimpleBot : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class SimpleBot : MonoBehaviour
     }
 
     public spawner spawnerDict;
+
+    private HashSet<string> spawnableItems = new HashSet<string>();
+    
 
     public Dictionary<string, GameObject[]> spawnDict = null;
 
@@ -94,13 +98,18 @@ public class SimpleBot : MonoBehaviour
 
     private void Start()
     {
-        GameObject scriptObject = GameObject.Find("Script");
-
+        getFileNames();
         spawner spawner1 = new spawner();
-        spawnDict = spawner1.StringGameObjectDictionary;
 
-       
+        var spawnableItemsList = new string[] { "bed", "table", "ball", "bottle", "carpet" };
+        foreach (string item in spawnableItemsList)
+        {
+            spawnableItems.Add(item);
 
+        }
+        
+
+           
         // Enable TLS 1.2
         //ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
@@ -235,7 +244,14 @@ public class SimpleBot : MonoBehaviour
             chatStatus = ProcessingStatus.Processed;
         }
     }
-
+    private void getFileNames()
+    {
+         string[] allfiles = Directory.GetFiles("Assets/Austins-Prefabs", "*.*", SearchOption.AllDirectories);
+        foreach (string file in allfiles)
+            Console.WriteLine(Path.GetFileName(file));
+        Debug.Log(allfiles);
+        Debug.Log("all your files boi");
+    }
     private void OnDeleteSession(DetailedResponse<object> response, IBMError error)
     {
         deleteSessionTested = true;
@@ -341,33 +357,17 @@ public class SimpleBot : MonoBehaviour
 
                     }
 
-
+                    Debug.Log("I am not receiving object type");
                     if (ObjectType != null)
                     {
                         var playerPosition = FindObjectOfType<OVRPlayerController>().GetComponent<Transform>();
                         Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z + 2f);
-
-
-                        if (ObjectType == "cube")
-                        {
-                            myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                            myObject.transform.position = new Vector3(0f, 1f, 0f);
-                            rend = myObject.GetComponent<Renderer>();
-                            rend.material.color = Color.red;
-                        }
-                        else if (ObjectType == "ball")
-                        {
-
-                            myObject = Instantiate(spawnerDict.StringGameObjectDictionary["table"][0], objectPosition, Quaternion.identity);
-                        }
-                        else if (ObjectType == "bottle")
-                        {
-
-                            myObject = Instantiate(spawnerDict.StringGameObjectDictionary["table_gray"][1], objectPosition, Quaternion.identity);
-                        }
-
-                        rend = myObject.GetComponent<Renderer>();
-                        rend.material.color = ObjectColor;
+                        Debug.Log("I am receiving object type");
+                        Debug.Log(ObjectType);
+                        spawnObject(ObjectType, objectPosition);
+                   
+                        //rend = myObject.GetComponent<Renderer>();
+                        //rend.material.color = ObjectColor;
                     }
 
                 }
@@ -396,7 +396,28 @@ public class SimpleBot : MonoBehaviour
         }
 
         
-    
+    private GameObject spawnObject(string item, Vector3 objectPosition)
+
+    {
+        GameObject myObject = null;
+        Debug.Log("item" + item + "this is the item");
+        //if (spawnableItems.Contains(item))
+        //{
+            Debug.LogWarning("item" + item + "this is the item2");
+            Debug.Log("itemDict" + spawnerDict.StringGameObjectDictionary[item]);
+            System.Random rnd = new System.Random();
+
+            var randomInt = rnd.Next(0, spawnerDict.StringGameObjectDictionary[item].Length-1);
+            Debug.LogWarning("The Item is " + item);
+            Debug.Log("The ramdint is " + randomInt);
+            Debug.LogWarning("length of dict" + (spawnerDict.StringGameObjectDictionary[item].Length - 1));
+            Instantiate(spawnerDict.StringGameObjectDictionary[item][randomInt], objectPosition, Quaternion.identity);
+
+        //}
+
+
+        return myObject;
+    }
 
     private void OnCreateSession(DetailedResponse<SessionResponse> response, IBMError error)
     {
