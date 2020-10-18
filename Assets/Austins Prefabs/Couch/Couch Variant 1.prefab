@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2588328161040246901, guid: 7cb88411d46907d4b9be138daa525f12,
         type: 3}
       propertyPath: m_Name
-      value: Couch
+      value: Couch Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 2927416805783892687, guid: 7cb88411d46907d4b9be138daa525f12,
         type: 3}
@@ -65,6 +65,26 @@ PrefabInstance:
     - target: {fileID: 2927416805783892687, guid: 7cb88411d46907d4b9be138daa525f12,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927416805783892687, guid: 7cb88411d46907d4b9be138daa525f12,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927416805783892687, guid: 7cb88411d46907d4b9be138daa525f12,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927416805783892687, guid: 7cb88411d46907d4b9be138daa525f12,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398809717776053890, guid: 7cb88411d46907d4b9be138daa525f12,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

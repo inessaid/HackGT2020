@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 8058623690122343351, guid: c0af0030f17a3a84c9e4119ca83c4fe6,
         type: 3}
       propertyPath: m_Name
-      value: Lounge Chair (1)
+      value: Lounge Chair (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8522460309253300876, guid: c0af0030f17a3a84c9e4119ca83c4fe6,
         type: 3}

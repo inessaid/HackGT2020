@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 3064267902808569051}
   - component: {fileID: 5633732322874738869}
   - component: {fileID: 8853962653350567914}
+  - component: {fileID: 7234302154702152596}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -235,7 +236,7 @@ MeshCollider:
   m_GameObject: {fileID: 2758207096250771594}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -252,10 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5765deea283b9634ba39ec5930aeeaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftController: {fileID: 0}
-  rightController: {fileID: 0}
-  camera: {fileID: 0}
-  obj: {fileID: 0}
 --- !u!114 &8853962653350567914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +296,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!65 &7234302154702152596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758207096250771594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3440674475346317801
 GameObject:
   m_ObjectHideFlags: 0

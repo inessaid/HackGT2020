@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2712752907498586897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049515884018703671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7641864346741183653}
+          m_MethodName: cubeStatusOn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7641864346741183653}
+          m_MethodName: cubeStatusOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7641864346741183653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049515884018703671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5765deea283b9634ba39ec5930aeeaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &7364539947040595393
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049515884018703671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &7166574860305539174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,7 +159,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2302e443d6bdaf84bb0a78dbfd865d9d,
         type: 3}
       propertyPath: m_Name
-      value: CoffeeTable
+      value: CoffeeTable Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4191509097384965755, guid: 2302e443d6bdaf84bb0a78dbfd865d9d,
         type: 3}
@@ -109,3 +178,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ed665f31039d53048a3e590f7ff45fdc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2302e443d6bdaf84bb0a78dbfd865d9d, type: 3}
+--- !u!1 &8049515884018703671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2302e443d6bdaf84bb0a78dbfd865d9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7166574860305539174}
+  m_PrefabAsset: {fileID: 0}

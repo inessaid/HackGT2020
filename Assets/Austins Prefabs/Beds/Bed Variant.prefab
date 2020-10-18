@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3064267902808569051, guid: 4c94452dbb5572d4c8c25d0fde9ea463,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3246196004211225136, guid: 4c94452dbb5572d4c8c25d0fde9ea463,
         type: 3}
       propertyPath: m_LocalPosition.x

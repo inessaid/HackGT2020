@@ -343,30 +343,103 @@ public class SimpleBot : MonoBehaviour
                     if (ObjectType != null)
                     {
                         var playerPosition = FindObjectOfType<OVRPlayerController>().GetComponent<Transform>();
-                        Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z + 2f);
+                        Vector3 objectPosition = new Vector3(playerPosition.position.x, playerPosition.position.y, playerPosition.position.z - 2f);
 
 
-                        if (ObjectType == "cube")
+                        /* if (ObjectType == "cube")
+                         {
+                             myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                             myObject.transform.position = new Vector3(0f, 1f, 0f);
+                             rend = myObject.GetComponent<Renderer>();
+                             rend.material.color = Color.red;
+                         }
+                         else if (ObjectType == "ball")
+                         {
+
+                             Instantiate(spawnItems[0], objectPosition, Quaternion.identity);
+                         }
+                         else if (ObjectType == "bottle")
+                         {
+
+                              Instantiate(spawnItems[1], objectPosition, Quaternion.identity);
+                         }
+                         else if (ObjectType == "bed")
+                         {
+
+                              Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                         }
+                         else if (ObjectType == "room")
+                         {
+
+                             Instantiate(spawnItems[5], objectPosition, Quaternion.identity);
+                         }*/
+
+
+                        System.Random rnd = new System.Random();
+
+                        var randomInt = rnd.Next(0, 2);
+
+                        if (ObjectType == "bed")
                         {
-                            myObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                            myObject.transform.position = new Vector3(0f, 1f, 0f);
-                            rend = myObject.GetComponent<Renderer>();
-                            rend.material.color = Color.red;
+
+                            Instantiate(spawnItems[0 + randomInt], objectPosition, Quaternion.identity);
+
                         }
-                        else if (ObjectType == "ball")
+                        else if (ObjectType == "carpet")
                         {
 
-                            Instantiate(spawnItems[0], objectPosition, Quaternion.identity);
+                            Instantiate(spawnItems[3 + randomInt], objectPosition, Quaternion.identity);
                         }
-                        else if (ObjectType == "bottle")
+                        else if (ObjectType == "coffee table")
                         {
 
-                             Instantiate(spawnItems[1], objectPosition, Quaternion.identity);
+                            Instantiate(spawnItems[6 + randomInt], objectPosition, Quaternion.identity);
                         }
-                        else if (ObjectType == "bed")
+                        else if (ObjectType == "couch")
                         {
 
-                             Instantiate(spawnItems[2], objectPosition, Quaternion.identity);
+                            Instantiate(spawnItems[9 + randomInt], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "tree")
+                        {
+
+                            Instantiate(spawnItems[12 + randomInt], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "kitchen chair")
+                        {
+
+                            Instantiate(spawnItems[15 + randomInt], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "lounge chair")
+                        {
+
+                            Instantiate(spawnItems[18 + randomInt], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "painting")
+                        {
+
+                            Instantiate(spawnItems[21 + randomInt], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "pillow")
+                        {
+
+                            Instantiate(spawnItems[24 + randomInt], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "refrigerator")
+                        {
+                            var randomIntSpecial = rnd.Next(0, 1);
+
+                            Instantiate(spawnItems[26 + randomIntSpecial], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "room")
+                        {
+
+                            Instantiate(spawnItems[29], objectPosition, Quaternion.identity);
+                        }
+                        else if (ObjectType == "table")
+                        {
+
+                            Instantiate(spawnItems[30 + randomInt], objectPosition, Quaternion.identity);
                         }
 
                         rend = myObject.GetComponent<Renderer>();
