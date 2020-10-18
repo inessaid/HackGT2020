@@ -4,17 +4,17 @@ Austin Stanbury, Ines Said, Patrick Molen, Rashaan Siddiqui
 
 10/18/2020
 
-#Introduction
+# Introduction
 
 This projects implements three IBM Watson Services: Speech-To-Text, Text-To-Speech and Assistant! 
 
-#Setting up IBM Watson Cloud Services
+# Setting up IBM Watson Cloud Services
 
 Start by creating your IBM Watson Speech-To-Text, Text-To-Speech and Assistant.
 
 Follow the steps below to find your creditionals:
 
-Speech to Text and Text to Speech
+##### Speech to Text and Text to Speech
 
 1- Go to your resource list by clicking the panel at the top left of your screen.
 
@@ -26,7 +26,7 @@ Speech to Text and Text to Speech
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
      
-IBM Assistant
+#### IBM Assistant
 
 1- Go to your resource list by clicking the panel at the top left of your screen.
 
@@ -36,11 +36,20 @@ IBM Assistant
 
 4- Click the big blue "Launch Watson Assistant" button.
 
-5- Click the three dots at the side of your assistant.
+5- Click the three dots at the side of your assistant (as shown below).
 
 
 <img src="https://media.discordapp.net/attachments/766491669590835231/767315548920741908/Capture1.PNG?width=1208&height=365"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
      
-     
+6- Click on Settings.
+
+7- Navigate to API details on the left of the window. In this page, you can see all the credentials needed.
+
+WARNING !! THE COPY BUTTON DOES NOT WORK ON THE ASSISTANT PAGE. MAKE SURE TO HIGHLIGHT THE CREDENTIALS AND MANUALLY COPY AND PASTE THEM.
+
+<img src="https://cdn.discordapp.com/attachments/766491669590835231/767326008553766973/Capture.PNG"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
