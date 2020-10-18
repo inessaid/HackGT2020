@@ -8,6 +8,23 @@ Austin Stanbury, Ines Said, Patrick Molen, Rashaan Siddiqui
 
 This projects implements three IBM Watson Services: Speech-To-Text, Text-To-Speech and Assistant!
 
+WonderLab places the user in a digital realm accompanied by the assistant robot Rollanda ("Roll", get it?). Rolanda can make anything you desire appear in the space, and has
+
+access to a large library of assets in many colors. She can make rooms, trees, garden fences, chairs, paintings, computers, kitchen items and anything else you can imagine come
+
+out of thin air, just by telling her "I want a [object]". For example, if you wanted a room, you simply tell Rollanda "I want a room", and she will make one appear for you.
+
+She'll also give a verbal affirmation that she did what you asked, including her favorite word "voila!" (pronounced voy - lah). 
+
+This means that anybody, at any skill level can jump into the WonderLab and reimagine their reality.
+
+
+# Implementation 
+
+<img src="https://media.discordapp.net/attachments/766491669590835231/767265400488460318/Asset_4.png?width=565&height=731"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
 # Setting up IBM Watson Cloud Services
 
 Start by creating your IBM Watson Speech-To-Text, Text-To-Speech and Assistant.
