@@ -6,7 +6,7 @@ Austin Stanbury, Ines Said, Patrick Molen, Rashaan Siddiqui
 
 # Introduction
 
-This projects implements three IBM Watson Services: Speech-To-Text, Text-To-Speech and Assistant! 
+This projects implements three IBM Watson Services: Speech-To-Text, Text-To-Speech and Assistant!
 
 # Setting up IBM Watson Cloud Services
 
@@ -52,4 +52,30 @@ WARNING !! THE COPY BUTTON DOES NOT WORK ON THE ASSISTANT PAGE. MAKE SURE TO HIG
 <img src="https://cdn.discordapp.com/attachments/766491669590835231/767326008553766973/Capture.PNG"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+
+Once you have your credentials saved, make sure to add them to Watson Settings in Unity:
+
+1- Search Watson Settings on Unity search bar.
+
+2- Select the red Icon.
+
+3- Paste credentials.
+
+# Setting Up Oculus
+
+Oculus APK is already included in this repo. There is no need to import it again. Make sure VR is still enabled in your project by following these steps:
+
+1- Navigate to Unity Build Settings, Player Settings, XR settings
+
+2- Make sure Oculus is added to the Virtual Reality SDKs, otherwise click the + button and add it.
+
+3- Make sure Shared Depth Buffer and Dash Support are checked.
+
+<img src="https://media.discordapp.net/attachments/766491669590835231/767328712974663690/xr_settings.PNG"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+     
+# Problems We're Still Trying to Fix
+
+There are some lag issues if too many huge objects are placed in the scene.
 
