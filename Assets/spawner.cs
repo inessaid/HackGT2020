@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
-
+using Sirenix.Serialization;
+using System;
 public class spawner : SerializedMonoBehaviour
 {
 
-    [InfoBox("In order to serialize dctionaries, all we need to do is to inherit our class from SerializedMonoBehaviour.")]
     [SerializeField]
     public Dictionary<string, GameObject[]> StringGameObjectDictionary = new Dictionary<string, GameObject[]>();
   
